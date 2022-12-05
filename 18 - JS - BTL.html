@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NguyenThaiNhat</title>
+    <style>
+        .ns{
+            display: flex;
+        }
+        input{
+            height: 20px;
+            margin-bottom: 10px;
+        }
+        p{
+
+            margin: 0;
+        }
+        #kq{
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Nhận diện tam giác</h1>
+        <div class="ns">
+            <p>Nhập số thứ 1:</p>
+            <input id="s1" type="text"/>
+        </div>
+        <div class="ns">
+            <p>Nhập số thứ 2:</p>
+            <input id="s2" type="text"/>
+        </div>
+        <div class="ns">
+            <p>Nhập số thứ 3:</p>
+            <input id="s3" type="text"/>
+        </div>
+        <div class="ns">
+            <p>Kết quả:</p>
+            <input id="kq" type="text" value=""/>
+        </div>
+        <button onclick=dieuKien()> Kiểm tra</button>
+    </div>
+    <script>
+        function dieuKien() {
+            var a,b,c,kq,cv,s,p
+            a=document.getElementById("s1").value
+            b=document.getElementById("s2").value
+            c=document.getElementById("s3").value
+            if((a+b)>c && (a+c)>b && (b+c)>a){
+                cv=a+b+c;
+                p=(a+b+c)/2 ;
+                s=Math.sqrt(p(p-a)(p-b)*(p-c));
+                text = "Dien tich tam giac:" +s  ; }
+            else{
+                text ="Khong tao thanh tam giac";
+            }
+                document.getElementById("kq").value=text
+        }
+    </script>
+</body>
+</html>
